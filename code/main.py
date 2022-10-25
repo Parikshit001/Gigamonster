@@ -1,5 +1,6 @@
 import pygame, sys
 from settings import *
+from level import Level
 # from debug import debug
 
 class Game:
@@ -7,9 +8,11 @@ class Game:
 
         #general setup
         pygame.init()
-        self.screen = pygame.display.set_mode((WIDTH,HEIGHT))
+        self.screen = pygame.display.set_mode((WIDTH,HEIGHT)) 
         pygame.display.set_caption('Gigamonster')
         self.clock = pygame.time.Clock()
+        
+        self.level1 = Level1()
         
     def run(self):
         while True:
@@ -19,6 +22,7 @@ class Game:
                     sys.exit()
                     
             self.screen.fill('black')
+            self.level.run()
             pygame.display.update()
             self.clock.tick(FPS)
             
