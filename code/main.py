@@ -1,4 +1,5 @@
-import pygame, sys
+from math import gamma
+import pygame, sys, time
 from settings import *
 from level import Level
 # from debug import debug
@@ -12,7 +13,7 @@ class Game:
         pygame.display.set_caption('Gigamonster')
         self.clock = pygame.time.Clock()
         
-        self.level1 = Level1()
+        self.level = Level()
         
     def run(self):
         while True:
@@ -28,4 +29,4 @@ class Game:
             
 if __name__ == '__main__':
     game = Game()
-    game.run
+    game.run()
